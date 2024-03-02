@@ -44,7 +44,7 @@ export const deleteSearchParams = (type: string) => {
 export async function fetchCars() {
   
   const headers ={
-		'X-RapidAPI-Key': 'da68dcea5dmsh651995574a7a7acp18d522jsnf4a375ebc5c7',
+		'X-RapidAPI-Key': 'use your RapidApi Key',
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
   }
   
