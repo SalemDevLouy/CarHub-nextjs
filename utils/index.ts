@@ -41,14 +41,16 @@ export const deleteSearchParams = (type: string) => {
   return newPathname;
 };
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+  const {manufacturer,year,model,limit,fuel}=filters;
   
   const headers ={
 		'X-RapidAPI-Key': 'da68dcea5dmsh651995574a7a7acp18d522jsnf4a375ebc5c7',
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
   }
   
-  const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?
+  make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
 
 try {
   const response = await fetch(url, {

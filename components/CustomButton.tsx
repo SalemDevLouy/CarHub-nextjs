@@ -9,7 +9,7 @@ const CustomButton = ({title,containerStyles,textStyles,rightIcon,handleClick,bt
       disabled={false}
       type={btnType || "button"}
       onClick={handleClick}
-      className={`custom-btn ${containerStyles} ${textStyles}`}
+      className={`custom-btn hover:scale-[1.08] transition duration-300 easy-in-out ${containerStyles} ${textStyles}`}
     >
       <span className={`flex-1 `}>
         {title}

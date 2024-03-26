@@ -1,6 +1,6 @@
 "use client"
 import { SearchManuFacturerProps } from '@/types'
-import React ,{useState} from 'react'
+import React ,{Fragment, useState} from 'react'
 import { Combobox,Transition } from '@headlessui/react'
 import { manufacturers } from '@/constants'
 import Image from 'next/image'
@@ -32,10 +32,10 @@ const SearchManuFacturer = ({manuFacturer,setmanuFacturer}:SearchManuFacturerPro
           <Combobox.Input className='search-manufacturer__input'
           placeholder='Volswagen'
           displayValue={(manuFacturer: string) => manuFacturer}
-          onChange={(e) =>setQuery(e.target.value)}  
+          onChange={(e) =>setmanuFacturer(e.target.value)}  
           />
           <Transition
-            as={Combobox}
+          as={Fragment}
             leave='transition ease-in duration-100'
             leaveFrom='opacity-100'
             leaveTo='opasity-0'
@@ -60,7 +60,7 @@ const SearchManuFacturer = ({manuFacturer,setmanuFacturer}:SearchManuFacturerPro
                         className={({ active }) => `realative search-manufacturer__option
                          ${active ? 'bg-primary-blue text-white' :
                           'text-gray-900'}`}
-                      value={item}
+                        value={item}
                       >
                         {({ selected, active }) => (
                           <>
